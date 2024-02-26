@@ -11,3 +11,8 @@ def create_book(request):
     book = {"title": "Example Book", "author": "John Doe", "year": "2023"}
     mycol.insert_one(book)
     return HttpResponse('Book created successfully')
+
+def find_book(request):
+    book = mycol.find_one()
+    print(book)
+    return HttpResponse('Book found' + str(book))
