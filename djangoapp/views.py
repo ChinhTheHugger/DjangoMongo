@@ -15,4 +15,4 @@ def create_book(request):
 def find_book(request):
     book = mycol.find_one()
     print(book)
-    return HttpResponse('Book found' + str(book))
+    return HttpResponse('Book found: ' + book['title'] + ", " + book['author'] + ", " + book['year'])
