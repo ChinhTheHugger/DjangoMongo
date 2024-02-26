@@ -12,5 +12,5 @@ import pymongo
 #     return db_handle, client    
 
 myclient = pymongo.MongoClient("mongodb://localhost:27017/")
-mydb = myclient["Books"]
-mycol = mydb["book"]
+mydb = myclient["Cars"]
+mycol = mydb["cardb2"]
