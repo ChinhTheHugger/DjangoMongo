@@ -5,3 +5,5 @@ class Book(Document):
     title = StringField(required=True)
     author = StringField(required=True)
     year = IntField(required=True)
+    
+    
