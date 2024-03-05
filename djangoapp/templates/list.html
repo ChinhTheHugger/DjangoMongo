@@ -35,12 +35,13 @@ tr:nth-child(even) {
   {% for car in carslist %}
   <tr>
     <td>{{car.carname}}</td>
-    <td>{{car..year}}</td>
+    <td>{{car.year}}</td>
     <td>{{car.desintext}}</td>
     <td>{{car.model}}</td>
     <td>{{car.brandname}}</td>
     <td>{{car.categoryname}}</td>
   </tr>
+  {% endfor %}
 </table>
 
 </body>
