@@ -14,10 +14,10 @@ def index(request):
 
 def list_cars(request):
     # cars = mycol.find_one()
-    # return HttpResponse('Car found:' + ", " + cars['carname'] + ", " + str(cars['year']) + ", " + cars['desintext'] + ", " + cars['model'] + ", " + cars['brandname'] + ", " + cars['categoryname'])
+    # return HttpResponse('Car found:' + ", " + str(cars['_id']) + ", " + cars['carname'] + ", " + str(cars['year']) + ", " + cars['desintext'] + ", " + cars['model'] + ", " + cars['brandname'] + ", " + cars['categoryname'] + "\n")
     cl = mycol.find()
     carslist = []
     for car in cl:
-        carslist.append(Car(car['carname'],car['year'],car['desintext'],car['model'],car['brandname'],car['categoryname']))
+        carslist.append(Car(carid=str(car['_id']),carname=car['carname'],year=car['year'],desintext=car['desintext'],model=car['model'],brandname=car['brandname'],categoryname=car['categoryname'],front=car['front']))
     context = {'carslist': carslist}
     return render(request,'list.html',context)

@@ -25,6 +25,8 @@ tr:nth-child(even) {
 
 <table style="align-items: center;">
   <tr>
+    <th>Car ID</th>
+    <th>Image</th>
     <th>Car name</th>
     <th>Year</th>
     <th>Description</th>
@@ -34,6 +36,10 @@ tr:nth-child(even) {
   </tr>
   {% for car in carslist %}
   <tr>
+    <td>{{car.carid}}</td>
+    <td>
+      <img src="{{car.front.url}}" style="width: 50px;height: 50px;">
+    </td>
     <td>{{car.carname}}</td>
     <td>{{car.year}}</td>
     <td>{{car.desintext}}</td>
@@ -43,6 +49,9 @@ tr:nth-child(even) {
   </tr>
   {% endfor %}
 </table>
+<!-- {% for car in carslist %}
+<p>{{car.carid}} {{car.carname}} {{car.year}} {{car.desintext}} {{car.model}} {{car.brandname}} {{car.categoryname}}</p>
+{% endfor %} -->
 
 </body>
 </html>
